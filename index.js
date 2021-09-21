@@ -26,7 +26,7 @@ module.exports = function ({ out = 'build' } = {}) {
       builder.utils.log.minor('Copying server');
       builder.utils.copy_server_files(out);
       copyFileSync(`${__dirname}/files/serverless.js`, `${server_directory}/_serverless.js`);
-      copyFileSync(`${__dirname}/shims.js`, `${server_directory}/shims.js`);
+      copyFileSync(`${__dirname}/files/shims.js`, `${server_directory}/shims.js`);
 
 
       builder.utils.log.minor('Building lambda');
