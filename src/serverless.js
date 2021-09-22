@@ -33,8 +33,6 @@ const server = polka().use(
     const encoding = isBase64Encoded ? 'base64' : headers['content-encoding'] || 'utf-8';
     const rawBody = typeof body === 'string' ? Buffer.from(body, encoding) : body;
 
-
-    console.log(req.body.toString())
     const params = {
       method: req.method,
       headers: req.headers,
@@ -42,9 +40,6 @@ const server = polka().use(
       rawBody,
       query: query
     };
-
-    console.log(req);
-    console.log(params);
     const rendered = await app.render(params);
 
     if (rendered) {
